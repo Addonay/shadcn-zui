@@ -102,7 +102,7 @@ pub const Button = struct {
     disabled_value: bool = false,
     leading_icon: ?icon_component.Name = null,
     trailing_icon: ?icon_component.Name = null,
-    listener: ?zui.Listener = null,
+    listener: ?zui.elements.Listener = null,
 
     pub fn init(text: []const u8) Button {
         return .{ .text = text };
@@ -138,7 +138,7 @@ pub const Button = struct {
         return copy;
     }
 
-    pub fn onClick(self: Button, listener: zui.Listener) Button {
+    pub fn onClick(self: Button, listener: zui.elements.Listener) Button {
         var copy = self;
         copy.listener = listener;
         return copy;
@@ -181,7 +181,7 @@ pub const IconButton = struct {
     size_value: f32 = 36,
     icon_px: f32 = 16,
     disabled_value: bool = false,
-    listener: ?zui.Listener = null,
+    listener: ?zui.elements.Listener = null,
 
     pub fn init(name: icon_component.Name) IconButton {
         return .{ .name = name };
@@ -206,7 +206,7 @@ pub const IconButton = struct {
         return copy;
     }
 
-    pub fn onClick(self: IconButton, listener: zui.Listener) IconButton {
+    pub fn onClick(self: IconButton, listener: zui.elements.Listener) IconButton {
         var copy = self;
         copy.listener = listener;
         return copy;

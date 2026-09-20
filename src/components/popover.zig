@@ -32,7 +32,7 @@ pub const Popover = struct {
     anchor_y: f32,
     width_px: f32 = default_width,
     content_value: ?zui.Element = null,
-    on_scrim_click: ?zui.Listener = null,
+    on_scrim_click: ?zui.elements.Listener = null,
 
     pub fn init(x: f32, y: f32) Popover {
         return .{ .anchor_x = x, .anchor_y = y };
@@ -52,7 +52,7 @@ pub const Popover = struct {
 
     /// Dismiss-on-outside-click. Without it the overlay is non-modal: no
     /// scrim is drawn and clicks pass through to the page below.
-    pub fn onScrimClick(self: Popover, listener: zui.Listener) Popover {
+    pub fn onScrimClick(self: Popover, listener: zui.elements.Listener) Popover {
         var copy = self;
         copy.on_scrim_click = listener;
         return copy;

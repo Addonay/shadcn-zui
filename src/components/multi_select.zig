@@ -11,7 +11,7 @@ const tag_component = @import("tag.zig");
 
 pub const Chip = struct {
     label: []const u8,
-    on_remove: ?zui.Listener = null,
+    on_remove: ?zui.elements.Listener = null,
 
     pub fn render(self: Chip) zui.Element {
         var chip = tag_component.Tag.init(self.label).variant(.outline);
@@ -31,13 +31,13 @@ pub fn summaryLabel(count: usize) []const u8 {
 
 pub const MultiSelect = struct {
     chips: []const Chip,
-    on_open: ?zui.Listener = null,
+    on_open: ?zui.elements.Listener = null,
 
     pub fn init(chips: []const Chip) MultiSelect {
         return .{ .chips = chips };
     }
 
-    pub fn onOpen(self: MultiSelect, listener: zui.Listener) MultiSelect {
+    pub fn onOpen(self: MultiSelect, listener: zui.elements.Listener) MultiSelect {
         var copy = self;
         copy.on_open = listener;
         return copy;

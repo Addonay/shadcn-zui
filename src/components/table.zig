@@ -79,9 +79,9 @@ pub const Row = struct {
     cells: []const zui.Element,
     selected: bool = false,
     /// Per-row checkbox listener; the checkbox still paints when absent.
-    selection: ?zui.Listener = null,
+    selection: ?zui.elements.Listener = null,
     /// Whole-row click; also enables the pointer cursor and hover tint.
-    on_click: ?zui.Listener = null,
+    on_click: ?zui.elements.Listener = null,
 };
 
 /// Resolved width rule for a column wrapper.
@@ -105,7 +105,7 @@ pub const Table = struct {
     rows_data: []const Row = &.{},
     selectable_value: bool = false,
     all_selected: bool = false,
-    select_all: ?zui.Listener = null,
+    select_all: ?zui.elements.Listener = null,
 
     pub fn init(columns: []const Column) Table {
         return .{ .columns = columns };
@@ -129,7 +129,7 @@ pub const Table = struct {
         return copy;
     }
 
-    pub fn onSelectAll(self: Table, listener: zui.Listener) Table {
+    pub fn onSelectAll(self: Table, listener: zui.elements.Listener) Table {
         var copy = self;
         copy.select_all = listener;
         return copy;
@@ -191,7 +191,7 @@ pub fn renderRow(row_data: Row, selectable: bool, columns: anytype) zui.Element 
 }
 
 /// The 16px selection slot: checkbox plus the dashboard's reserved right edge.
-fn selectionCell(checked: bool, listener: ?zui.Listener) zui.Element {
+fn selectionCell(checked: bool, listener: ?zui.elements.Listener) zui.Element {
     var box = checkbox.Checkbox.init().checked(checked);
     if (listener) |value| box = box.onToggle(value);
     return zui.div().w(checkbox_size).child(box.render());

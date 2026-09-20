@@ -18,7 +18,7 @@ pub const NavLink = struct {
     active: bool = false,
     count_text: ?[]const u8 = null,
     chevron: bool = false,
-    on_click: ?zui.Listener = null,
+    on_click: ?zui.elements.Listener = null,
 
     pub fn init(label_text: []const u8) NavLink {
         return .{ .label_text = label_text };
@@ -48,7 +48,7 @@ pub const NavLink = struct {
         return copy;
     }
 
-    pub fn onClick(self: NavLink, listener: zui.Listener) NavLink {
+    pub fn onClick(self: NavLink, listener: zui.elements.Listener) NavLink {
         var copy = self;
         copy.on_click = listener;
         return copy;

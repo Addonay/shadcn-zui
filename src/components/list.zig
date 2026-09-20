@@ -15,7 +15,7 @@ pub const Item = struct {
     icon_name: ?icon_component.Name = null,
     selected: bool = false,
     disabled: bool = false,
-    on_click: ?zui.Listener = null,
+    on_click: ?zui.elements.Listener = null,
 };
 
 /// Row chrome for a state (pure; unit-tested).

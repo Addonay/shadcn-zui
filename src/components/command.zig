@@ -32,7 +32,7 @@ pub const Item = struct {
     shortcut: ?[]const u8 = null,
     /// Highlighted (arrow-key selection in the app).
     selected: bool = false,
-    on_click: ?zui.Listener = null,
+    on_click: ?zui.elements.Listener = null,
 };
 
 pub const default_width: f32 = 330;

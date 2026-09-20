@@ -45,13 +45,13 @@ pub fn overlayRoot() zui.Element {
 }
 
 /// The scrim layer covering the window; dismisses when a listener is given.
-pub fn scrimLayer(on_scrim_click: ?zui.Listener) zui.Element {
+pub fn scrimLayer(on_scrim_click: ?zui.elements.Listener) zui.Element {
     var layer = zui.div().absolute().inset(0).bg(scrimColor());
     if (on_scrim_click) |listener| layer = layer.on_click(listener);
     return layer;
 }
 
-fn scrim(on_scrim_click: ?zui.Listener) zui.Element {
+fn scrim(on_scrim_click: ?zui.elements.Listener) zui.Element {
     return scrimLayer(on_scrim_click);
 }
 
@@ -61,7 +61,7 @@ pub const Dialog = struct {
     content_value: ?zui.Element = null,
     footer_value: ?zui.Element = null,
     width_px: f32 = default_width,
-    on_scrim_click: ?zui.Listener = null,
+    on_scrim_click: ?zui.elements.Listener = null,
 
     pub fn init() Dialog {
         return .{};
@@ -97,7 +97,7 @@ pub const Dialog = struct {
         return copy;
     }
 
-    pub fn onScrimClick(self: Dialog, listener: zui.Listener) Dialog {
+    pub fn onScrimClick(self: Dialog, listener: zui.elements.Listener) Dialog {
         var copy = self;
         copy.on_scrim_click = listener;
         return copy;
@@ -135,7 +135,7 @@ pub const AlertDialog = struct {
     /// Destructive action (e.g. `Button.init("Delete").variant(.destructive)`).
     action_value: ?zui.Element = null,
     width_px: f32 = default_width,
-    on_scrim_click: ?zui.Listener = null,
+    on_scrim_click: ?zui.elements.Listener = null,
 
     pub fn init() AlertDialog {
         return .{};
@@ -171,7 +171,7 @@ pub const AlertDialog = struct {
         return copy;
     }
 
-    pub fn onScrimClick(self: AlertDialog, listener: zui.Listener) AlertDialog {
+    pub fn onScrimClick(self: AlertDialog, listener: zui.elements.Listener) AlertDialog {
         var copy = self;
         copy.on_scrim_click = listener;
         return copy;

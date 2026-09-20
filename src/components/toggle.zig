@@ -44,7 +44,7 @@ pub const Toggle = struct {
     size_value: Size = .md,
     icon_value: ?icon_component.Name = null,
     disabled_value: bool = false,
-    listener: ?zui.Listener = null,
+    listener: ?zui.elements.Listener = null,
 
     pub fn init(text: []const u8) Toggle {
         return .{ .text = text };
@@ -79,7 +79,7 @@ pub const Toggle = struct {
         return copy;
     }
 
-    pub fn onToggle(self: Toggle, listener: zui.Listener) Toggle {
+    pub fn onToggle(self: Toggle, listener: zui.elements.Listener) Toggle {
         var copy = self;
         copy.listener = listener;
         return copy;

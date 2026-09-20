@@ -43,7 +43,7 @@ pub const Item = struct {
     active: bool = false,
     count: ?[]const u8 = null,
     icon: ?icon_component.Name = null,
-    on_click: ?zui.Listener = null,
+    on_click: ?zui.elements.Listener = null,
 };
 
 /// Resolved trigger colors; kept separate from rendering so it stays testable

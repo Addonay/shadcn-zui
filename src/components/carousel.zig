@@ -27,9 +27,9 @@ pub const Carousel = struct {
     items: []const zui.Element,
     page_index: usize = 0,
     per_page: usize = 3,
-    on_prev: ?zui.Listener = null,
-    on_next: ?zui.Listener = null,
-    on_dot: ?zui.Listener = null,
+    on_prev: ?zui.elements.Listener = null,
+    on_next: ?zui.elements.Listener = null,
+    on_dot: ?zui.elements.Listener = null,
 
     pub fn init(items: []const zui.Element) Carousel {
         return .{ .items = items };
@@ -47,20 +47,20 @@ pub const Carousel = struct {
         return copy;
     }
 
-    pub fn onPrev(self: Carousel, listener: zui.Listener) Carousel {
+    pub fn onPrev(self: Carousel, listener: zui.elements.Listener) Carousel {
         var copy = self;
         copy.on_prev = listener;
         return copy;
     }
 
-    pub fn onNext(self: Carousel, listener: zui.Listener) Carousel {
+    pub fn onNext(self: Carousel, listener: zui.elements.Listener) Carousel {
         var copy = self;
         copy.on_next = listener;
         return copy;
     }
 
     /// Fired with the dot index as payload (`cx.listenerWith(usize, ...)`).
-    pub fn onDot(self: Carousel, listener: zui.Listener) Carousel {
+    pub fn onDot(self: Carousel, listener: zui.elements.Listener) Carousel {
         var copy = self;
         copy.on_dot = listener;
         return copy;

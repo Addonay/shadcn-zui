@@ -20,7 +20,7 @@ pub fn icon(name: @import("components/icon/root.zig").Name, size: f32, color: zu
     return @import("components/icon/root.zig").render(name, size, color);
 }
 
-/// A `zui.Listener` that does nothing.
+/// A `zui.elements.Listener` that does nothing.
 ///
 /// zui dispatches mouse events to the topmost hit region only, and a node
 /// without a listener registers no region. Overlay panels (dialog, sheet,
@@ -31,6 +31,6 @@ var noop_target: u8 = 0;
 
 fn noopCall(_: *anyopaque, _: *const zui.elements.element.ListenerPayload, _: *anyopaque) void {}
 
-pub fn noopListener() zui.Listener {
+pub fn noopListener() zui.elements.Listener {
     return .{ .target = @ptrCast(&noop_target), .call_fn = noopCall };
 }

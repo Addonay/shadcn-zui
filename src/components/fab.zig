@@ -9,14 +9,14 @@ pub const size_px: f32 = 56;
 
 pub const Fab = struct {
     icon_name: icon_component.Name,
-    on_click: ?zui.Listener = null,
+    on_click: ?zui.elements.Listener = null,
     size_value: f32 = size_px,
 
     pub fn init(icon_name: icon_component.Name) Fab {
         return .{ .icon_name = icon_name };
     }
 
-    pub fn onClick(self: Fab, listener: zui.Listener) Fab {
+    pub fn onClick(self: Fab, listener: zui.elements.Listener) Fab {
         var copy = self;
         copy.on_click = listener;
         return copy;

@@ -27,7 +27,7 @@ pub const ContextMenu = struct {
         return copy;
     }
 
-    pub fn onScrimClick(self: ContextMenu, listener: zui.Listener) ContextMenu {
+    pub fn onScrimClick(self: ContextMenu, listener: zui.elements.Listener) ContextMenu {
         var copy = self;
         copy.inner = copy.inner.onScrimClick(listener);
         return copy;

@@ -12,7 +12,7 @@ pub const Autocomplete = struct {
     value_text: []const u8 = "",
     placeholder_text: []const u8 = "",
     /// Triggered on activate (enter/click) with the current text.
-    on_activate: ?zui.Listener = null,
+    on_activate: ?zui.elements.Listener = null,
 
     pub fn init() Autocomplete {
         return .{};
@@ -30,7 +30,7 @@ pub const Autocomplete = struct {
         return copy;
     }
 
-    pub fn onActivate(self: Autocomplete, listener: zui.Listener) Autocomplete {
+    pub fn onActivate(self: Autocomplete, listener: zui.elements.Listener) Autocomplete {
         var copy = self;
         copy.on_activate = listener;
         return copy;

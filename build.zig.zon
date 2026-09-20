@@ -1,13 +1,14 @@
 .{
     .name = .shadcn_zui,
-    .version = "0.1.0",
+    .version = "0.1.1",
     // Matches zui's own floor (cozmic declares it).
     .minimum_zig_version = "0.17.0-dev.2085+5e36170b5",
-    .fingerprint = 0x7ebbaf67dde2d492,
+    .fingerprint = 0x7ebbaf67dde2d493,
     .dependencies = .{
-        // Local checkout during development; swap for a git hash once zui is
-        // published: .zui = .{ .url = "...", .hash = "..." }
-        .zui = .{ .path = "../zui" },
+        .zui = .{
+            .url = "git+https://github.com/Addonay/zui.git#41d04c2b3026d887ff2892582cb1b31fb190f792",
+            .hash = "zui-0.0.1-_W0Uzyu9EwDQZILloRRJaRroj_ZPkEZ-IKkfcjhNf5j6",
+        },
     },
     .paths = .{
         "src",

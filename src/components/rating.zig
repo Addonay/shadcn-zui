@@ -31,7 +31,7 @@ pub const Rating = struct {
     max_stars: usize = default_max,
     star_px: f32 = default_size,
     /// Optional per-star listeners, parallel to the stars (may be null).
-    on_stars: ?[]const zui.Listener = null,
+    on_stars: ?[]const zui.elements.Listener = null,
     disabled_value: bool = false,
 
     pub fn init(value: f32) Rating {
@@ -51,7 +51,7 @@ pub const Rating = struct {
     }
 
     /// One listener per star (1-based order). `null` renders read-only.
-    pub fn onStars(self: Rating, listeners: []const zui.Listener) Rating {
+    pub fn onStars(self: Rating, listeners: []const zui.elements.Listener) Rating {
         var copy = self;
         copy.on_stars = listeners;
         return copy;

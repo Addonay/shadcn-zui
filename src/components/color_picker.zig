@@ -30,7 +30,7 @@ pub const ColorPicker = struct {
     selected: ?zui.Color = null,
     /// Formatted hex label; borrowed until paint.
     hex_text: []const u8 = "",
-    on_select: ?zui.Listener = null,
+    on_select: ?zui.elements.Listener = null,
 
     pub fn init() ColorPicker {
         return .{};
@@ -48,7 +48,7 @@ pub const ColorPicker = struct {
         return copy;
     }
 
-    pub fn onSelect(self: ColorPicker, listener: zui.Listener) ColorPicker {
+    pub fn onSelect(self: ColorPicker, listener: zui.elements.Listener) ColorPicker {
         var copy = self;
         copy.on_select = listener;
         return copy;

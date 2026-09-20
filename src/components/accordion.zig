@@ -18,7 +18,7 @@ pub const Item = struct {
     open: bool = false,
     disabled: bool = false,
     /// Toggle listener (built by the app, one per row).
-    on_click: ?zui.Listener = null,
+    on_click: ?zui.elements.Listener = null,
 };
 
 /// Which chevron a row shows (zui has no rotation transform, so the glyph

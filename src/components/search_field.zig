@@ -12,7 +12,7 @@ pub const SearchField = struct {
     value_text: []const u8 = "",
     placeholder_text: []const u8 = "Search…",
     kbd_hint: ?[]const u8 = null,
-    on_clear: ?zui.Listener = null,
+    on_clear: ?zui.elements.Listener = null,
 
     pub fn init() SearchField {
         return .{};
@@ -36,7 +36,7 @@ pub const SearchField = struct {
         return copy;
     }
 
-    pub fn onClear(self: SearchField, listener: zui.Listener) SearchField {
+    pub fn onClear(self: SearchField, listener: zui.elements.Listener) SearchField {
         var copy = self;
         copy.on_clear = listener;
         return copy;

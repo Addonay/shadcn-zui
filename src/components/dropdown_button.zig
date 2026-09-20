@@ -14,7 +14,7 @@ pub const DropdownButton = struct {
     variant_kind: button_component.Variant = .outline,
     size_kind: button_component.Size = .md,
     /// Fired with the button clicked; the app opens its menu at the pointer.
-    on_open: ?zui.Listener = null,
+    on_open: ?zui.elements.Listener = null,
 
     pub fn init(label_text: []const u8) DropdownButton {
         return .{ .label_text = label_text };
@@ -32,7 +32,7 @@ pub const DropdownButton = struct {
         return copy;
     }
 
-    pub fn onOpen(self: DropdownButton, listener: zui.Listener) DropdownButton {
+    pub fn onOpen(self: DropdownButton, listener: zui.elements.Listener) DropdownButton {
         var copy = self;
         copy.on_open = listener;
         return copy;

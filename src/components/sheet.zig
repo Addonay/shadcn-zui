@@ -37,7 +37,7 @@ pub const Sheet = struct {
     footer_value: ?zui.Element = null,
     width_px: f32 = default_width,
     height_px: f32 = default_height,
-    on_scrim_click: ?zui.Listener = null,
+    on_scrim_click: ?zui.elements.Listener = null,
 
     pub fn init(side: Side) Sheet {
         return .{ .side = side };
@@ -79,7 +79,7 @@ pub const Sheet = struct {
         return copy;
     }
 
-    pub fn onScrimClick(self: Sheet, listener: zui.Listener) Sheet {
+    pub fn onScrimClick(self: Sheet, listener: zui.elements.Listener) Sheet {
         var copy = self;
         copy.on_scrim_click = listener;
         return copy;

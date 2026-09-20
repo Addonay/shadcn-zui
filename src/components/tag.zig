@@ -26,7 +26,7 @@ pub const Tag = struct {
     text: []const u8,
     variant_kind: TagVariant = .default,
     /// Optional remove ("x") listener; shows the close button when set.
-    on_remove: ?zui.Listener = null,
+    on_remove: ?zui.elements.Listener = null,
 
     pub fn init(text: []const u8) Tag {
         return .{ .text = text };
@@ -38,7 +38,7 @@ pub const Tag = struct {
         return copy;
     }
 
-    pub fn onRemove(self: Tag, listener: zui.Listener) Tag {
+    pub fn onRemove(self: Tag, listener: zui.elements.Listener) Tag {
         var copy = self;
         copy.on_remove = listener;
         return copy;

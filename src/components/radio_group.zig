@@ -15,7 +15,7 @@ pub const Item = struct {
     description: []const u8 = "",
     selected: bool = false,
     disabled: bool = false,
-    on_click: ?zui.Listener = null,
+    on_click: ?zui.elements.Listener = null,
 };
 
 /// Indicator palette (pure; unit-tested).

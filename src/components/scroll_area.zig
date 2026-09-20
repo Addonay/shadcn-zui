@@ -38,7 +38,7 @@ pub const ScrollArea = struct {
     offset: f32 = 0,
     height_px: f32 = 300,
     content_value: ?zui.Element = null,
-    listener: ?zui.Listener = null,
+    listener: ?zui.elements.Listener = null,
     border_value: bool = false,
 
     pub fn init(offset: f32) ScrollArea {
@@ -57,7 +57,7 @@ pub const ScrollArea = struct {
         return copy;
     }
 
-    pub fn onScroll(self: ScrollArea, listener: zui.Listener) ScrollArea {
+    pub fn onScroll(self: ScrollArea, listener: zui.elements.Listener) ScrollArea {
         var copy = self;
         copy.listener = listener;
         return copy;

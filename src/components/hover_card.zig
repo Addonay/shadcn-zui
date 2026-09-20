@@ -31,7 +31,7 @@ pub const HoverCard = struct {
         return copy;
     }
 
-    pub fn onScrimClick(self: HoverCard, listener: zui.Listener) HoverCard {
+    pub fn onScrimClick(self: HoverCard, listener: zui.elements.Listener) HoverCard {
         var copy = self;
         copy.inner = copy.inner.onScrimClick(listener);
         return copy;

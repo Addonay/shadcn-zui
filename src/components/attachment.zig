@@ -27,7 +27,7 @@ pub const Attachment = struct {
     file_name: []const u8,
     /// Human-formatted size ("2.4 MB"), borrowed until paint.
     size_text: ?[]const u8 = null,
-    on_remove: ?zui.Listener = null,
+    on_remove: ?zui.elements.Listener = null,
 
     pub fn init(file_name: []const u8) Attachment {
         return .{ .file_name = file_name };
@@ -39,7 +39,7 @@ pub const Attachment = struct {
         return copy;
     }
 
-    pub fn onRemove(self: Attachment, listener: zui.Listener) Attachment {
+    pub fn onRemove(self: Attachment, listener: zui.elements.Listener) Attachment {
         var copy = self;
         copy.on_remove = listener;
         return copy;

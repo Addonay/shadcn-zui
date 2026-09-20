@@ -24,9 +24,9 @@ pub const Resizable = struct {
     right_value: zui.Element,
     fraction_value: f32 = 0.3,
     container_px: f32 = 900,
-    on_divider_down: ?zui.Listener = null,
-    on_divider_move: ?zui.Listener = null,
-    on_divider_up: ?zui.Listener = null,
+    on_divider_down: ?zui.elements.Listener = null,
+    on_divider_move: ?zui.elements.Listener = null,
+    on_divider_up: ?zui.elements.Listener = null,
 
     pub fn init(left: zui.Element, right: zui.Element) Resizable {
         return .{ .left_value = left, .right_value = right };
@@ -44,19 +44,19 @@ pub const Resizable = struct {
         return copy;
     }
 
-    pub fn onDividerDown(self: Resizable, listener: zui.Listener) Resizable {
+    pub fn onDividerDown(self: Resizable, listener: zui.elements.Listener) Resizable {
         var copy = self;
         copy.on_divider_down = listener;
         return copy;
     }
 
-    pub fn onDividerMove(self: Resizable, listener: zui.Listener) Resizable {
+    pub fn onDividerMove(self: Resizable, listener: zui.elements.Listener) Resizable {
         var copy = self;
         copy.on_divider_move = listener;
         return copy;
     }
 
-    pub fn onDividerUp(self: Resizable, listener: zui.Listener) Resizable {
+    pub fn onDividerUp(self: Resizable, listener: zui.elements.Listener) Resizable {
         var copy = self;
         copy.on_divider_up = listener;
         return copy;

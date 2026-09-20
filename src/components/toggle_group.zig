@@ -18,7 +18,7 @@ pub const Item = struct {
     pressed: bool = false,
     icon: ?icon_component.Name = null,
     disabled: bool = false,
-    on_click: ?zui.Listener = null,
+    on_click: ?zui.elements.Listener = null,
 };
 
 pub const ItemStyle = struct {

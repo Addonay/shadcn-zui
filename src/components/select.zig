@@ -21,7 +21,7 @@ pub const Select = struct {
     placeholder_text: []const u8,
     /// The current label ("Eddie Lake"); borrowed until paint.
     value_text: ?[]const u8 = null,
-    on_open: ?zui.Listener = null,
+    on_open: ?zui.elements.Listener = null,
     disabled: bool = false,
 
     pub fn init(placeholder_text: []const u8) Select {
@@ -34,7 +34,7 @@ pub const Select = struct {
         return copy;
     }
 
-    pub fn onOpen(self: Select, listener: zui.Listener) Select {
+    pub fn onOpen(self: Select, listener: zui.elements.Listener) Select {
         var copy = self;
         copy.on_open = listener;
         return copy;
@@ -65,7 +65,7 @@ pub const Select = struct {
 pub const Option = struct {
     label: []const u8,
     selected: bool = false,
-    on_click: ?zui.Listener = null,
+    on_click: ?zui.elements.Listener = null,
 
     pub fn render(self: Option) zui.Element {
         var row = zui.div().flex_row().items_center().gap(8).h(32).px(8).rounded(6)

@@ -16,7 +16,7 @@ pub const Item = struct {
     icon: ?icon_component.Name = null,
     /// The current page: not clickable, foreground text.
     current: bool = false,
-    on_click: ?zui.Listener = null,
+    on_click: ?zui.elements.Listener = null,
 };
 
 pub fn separatorColor() zui.Color {

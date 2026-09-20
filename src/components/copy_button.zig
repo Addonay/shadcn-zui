@@ -33,7 +33,7 @@ pub const CopyButton = struct {
     copied: bool = false,
     variant_value: button_component.Variant = .ghost,
     disabled_value: bool = false,
-    listener: ?zui.Listener = null,
+    listener: ?zui.elements.Listener = null,
 
     pub fn init() CopyButton {
         return .{};
@@ -51,7 +51,7 @@ pub const CopyButton = struct {
         return copy;
     }
 
-    pub fn onCopy(self: CopyButton, listener: zui.Listener) CopyButton {
+    pub fn onCopy(self: CopyButton, listener: zui.elements.Listener) CopyButton {
         var copy = self;
         copy.listener = listener;
         return copy;

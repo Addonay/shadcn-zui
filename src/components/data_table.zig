@@ -30,12 +30,12 @@ pub const Column = struct {
     width: ?f32 = null,
     grow: bool = false,
     sort_state: SortState = .none,
-    on_sort: ?zui.Listener = null,
+    on_sort: ?zui.elements.Listener = null,
 };
 
 pub const Row = struct {
     cells: []const zui.Element,
-    on_click: ?zui.Listener = null,
+    on_click: ?zui.elements.Listener = null,
 };
 
 /// Sort arrow + affordance for a column header (pure; unit-tested).

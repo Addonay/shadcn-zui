@@ -13,20 +13,20 @@ pub const Transfer = struct {
     heading_right: []const u8 = "Target",
     left_items: []const list_component.Item,
     right_items: []const list_component.Item,
-    on_to_right: ?zui.Listener = null,
-    on_to_left: ?zui.Listener = null,
+    on_to_right: ?zui.elements.Listener = null,
+    on_to_left: ?zui.elements.Listener = null,
 
     pub fn init(left_items: []const list_component.Item, right_items: []const list_component.Item) Transfer {
         return .{ .left_items = left_items, .right_items = right_items };
     }
 
-    pub fn onToRight(self: Transfer, listener: zui.Listener) Transfer {
+    pub fn onToRight(self: Transfer, listener: zui.elements.Listener) Transfer {
         var copy = self;
         copy.on_to_right = listener;
         return copy;
     }
 
-    pub fn onToLeft(self: Transfer, listener: zui.Listener) Transfer {
+    pub fn onToLeft(self: Transfer, listener: zui.elements.Listener) Transfer {
         var copy = self;
         copy.on_to_left = listener;
         return copy;

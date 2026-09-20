@@ -46,7 +46,7 @@ pub const Toast = struct {
     title: []const u8 = "",
     description_value: ?[]const u8 = null,
     variant_value: Variant = .default,
-    on_dismiss: ?zui.Listener = null,
+    on_dismiss: ?zui.elements.Listener = null,
 
     pub fn init(title: []const u8) Toast {
         return .{ .title = title };
@@ -65,7 +65,7 @@ pub const Toast = struct {
     }
 
     /// Dismiss (close) listener from the app.
-    pub fn onDismiss(self: Toast, listener: zui.Listener) Toast {
+    pub fn onDismiss(self: Toast, listener: zui.elements.Listener) Toast {
         var copy = self;
         copy.on_dismiss = listener;
         return copy;

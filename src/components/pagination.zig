@@ -35,7 +35,7 @@ pub const Item = struct {
     /// Page number text ("1", "2", ...); ignored for prev/next/ellipsis.
     label: []const u8 = "",
     current: bool = false,
-    on_click: ?zui.Listener = null,
+    on_click: ?zui.elements.Listener = null,
 };
 
 pub const button_size: f32 = 32;

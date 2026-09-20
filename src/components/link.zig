@@ -18,7 +18,7 @@ pub fn linkColor() zui.Color {
 pub const Link = struct {
     text: []const u8,
     href_icon: ?icon_component.Name = null,
-    listener: ?zui.Listener = null,
+    listener: ?zui.elements.Listener = null,
 
     pub fn init(text: []const u8) Link {
         return .{ .text = text };
@@ -31,7 +31,7 @@ pub const Link = struct {
         return copy;
     }
 
-    pub fn onClick(self: Link, listener: zui.Listener) Link {
+    pub fn onClick(self: Link, listener: zui.elements.Listener) Link {
         var copy = self;
         copy.listener = listener;
         return copy;

@@ -28,8 +28,8 @@ pub const Questionnaire = struct {
     body_value: zui.Element,
     step_index: usize = 0,
     step_total: usize = 1,
-    on_back: ?zui.Listener = null,
-    on_next: ?zui.Listener = null,
+    on_back: ?zui.elements.Listener = null,
+    on_next: ?zui.elements.Listener = null,
 
     pub fn init(step_title: []const u8, body: zui.Element) Questionnaire {
         return .{ .step_title = step_title, .body_value = body };
@@ -48,13 +48,13 @@ pub const Questionnaire = struct {
         return copy;
     }
 
-    pub fn onBack(self: Questionnaire, listener: zui.Listener) Questionnaire {
+    pub fn onBack(self: Questionnaire, listener: zui.elements.Listener) Questionnaire {
         var copy = self;
         copy.on_back = listener;
         return copy;
     }
 
-    pub fn onNext(self: Questionnaire, listener: zui.Listener) Questionnaire {
+    pub fn onNext(self: Questionnaire, listener: zui.elements.Listener) Questionnaire {
         var copy = self;
         copy.on_next = listener;
         return copy;

@@ -59,7 +59,7 @@ pub const Checkbox = struct {
     checked_value: bool = false,
     disabled_value: bool = false,
     size_value: f32 = default_size,
-    listener: ?zui.Listener = null,
+    listener: ?zui.elements.Listener = null,
 
     pub fn init() Checkbox {
         return .{};
@@ -84,7 +84,7 @@ pub const Checkbox = struct {
         return copy;
     }
 
-    pub fn onToggle(self: Checkbox, listener: zui.Listener) Checkbox {
+    pub fn onToggle(self: Checkbox, listener: zui.elements.Listener) Checkbox {
         var copy = self;
         copy.listener = listener;
         return copy;

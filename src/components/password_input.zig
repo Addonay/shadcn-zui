@@ -20,7 +20,7 @@ pub const PasswordInput = struct {
     value_text: []const u8,
     showing: bool = false,
     /// Toggled when the eye button is pressed.
-    on_toggle: ?zui.Listener = null,
+    on_toggle: ?zui.elements.Listener = null,
 
     pub fn init(value_text: []const u8) PasswordInput {
         return .{ .value_text = value_text };
@@ -32,7 +32,7 @@ pub const PasswordInput = struct {
         return copy;
     }
 
-    pub fn onToggle(self: PasswordInput, listener: zui.Listener) PasswordInput {
+    pub fn onToggle(self: PasswordInput, listener: zui.elements.Listener) PasswordInput {
         var copy = self;
         copy.on_toggle = listener;
         return copy;

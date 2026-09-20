@@ -12,7 +12,7 @@ pub const item_padding_x: f32 = 14;
 pub const Option = struct {
     label: []const u8,
     selected: bool = false,
-    on_click: ?zui.Listener = null,
+    on_click: ?zui.elements.Listener = null,
 };
 
 pub const Segmented = struct {

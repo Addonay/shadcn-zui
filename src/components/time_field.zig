@@ -18,10 +18,10 @@ pub fn wrapAdd(value: u32, delta: i32, modulus: u32) u32 {
 pub const TimeField = struct {
     hour_text: []const u8 = "09",
     minute_text: []const u8 = "41",
-    on_hour_up: ?zui.Listener = null,
-    on_hour_down: ?zui.Listener = null,
-    on_minute_up: ?zui.Listener = null,
-    on_minute_down: ?zui.Listener = null,
+    on_hour_up: ?zui.elements.Listener = null,
+    on_hour_down: ?zui.elements.Listener = null,
+    on_minute_up: ?zui.elements.Listener = null,
+    on_minute_down: ?zui.elements.Listener = null,
 
     pub fn init() TimeField {
         return .{};
@@ -39,33 +39,33 @@ pub const TimeField = struct {
         return copy;
     }
 
-    pub fn onHourUp(self: TimeField, listener: zui.Listener) TimeField {
+    pub fn onHourUp(self: TimeField, listener: zui.elements.Listener) TimeField {
         var copy = self;
         copy.on_hour_up = listener;
         return copy;
     }
 
-    pub fn onHourDown(self: TimeField, listener: zui.Listener) TimeField {
+    pub fn onHourDown(self: TimeField, listener: zui.elements.Listener) TimeField {
         var copy = self;
         copy.on_hour_down = listener;
         return copy;
     }
 
-    pub fn onMinuteUp(self: TimeField, listener: zui.Listener) TimeField {
+    pub fn onMinuteUp(self: TimeField, listener: zui.elements.Listener) TimeField {
         var copy = self;
         copy.on_minute_up = listener;
         return copy;
     }
 
-    pub fn onMinuteDown(self: TimeField, listener: zui.Listener) TimeField {
+    pub fn onMinuteDown(self: TimeField, listener: zui.elements.Listener) TimeField {
         var copy = self;
         copy.on_minute_down = listener;
         return copy;
     }
 
-    fn column(label_text: []const u8, value_text: []const u8, up: ?zui.Listener, down: ?zui.Listener) zui.Element {
+    fn column(label_text: []const u8, value_text: []const u8, up: ?zui.elements.Listener, down: ?zui.elements.Listener) zui.Element {
         var col = zui.div().flex_col().items_center().gap(2);
-        for ([_]struct { icon_component.Name, ?zui.Listener }{
+        for ([_]struct { icon_component.Name, ?zui.elements.Listener }{
             .{ .chevron_up, up },
             .{ .chevron_down, down },
         }) |pair| {

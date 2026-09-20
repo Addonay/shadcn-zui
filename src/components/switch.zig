@@ -50,7 +50,7 @@ pub const Switch = struct {
     checked_value: bool = false,
     size_value: Size = .md,
     disabled_value: bool = false,
-    listener: ?zui.Listener = null,
+    listener: ?zui.elements.Listener = null,
 
     pub fn init() Switch {
         return .{};
@@ -74,7 +74,7 @@ pub const Switch = struct {
         return copy;
     }
 
-    pub fn onChange(self: Switch, listener: zui.Listener) Switch {
+    pub fn onChange(self: Switch, listener: zui.elements.Listener) Switch {
         var copy = self;
         copy.listener = listener;
         return copy;

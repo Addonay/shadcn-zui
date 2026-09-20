@@ -18,7 +18,7 @@ pub const Row = struct {
     open: bool = false,
     selected: bool = false,
     icon_name: ?icon_component.Name = null,
-    on_click: ?zui.Listener = null,
+    on_click: ?zui.elements.Listener = null,
 };
 
 /// Indent width for a depth (pure; unit-tested).

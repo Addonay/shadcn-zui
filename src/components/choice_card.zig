@@ -19,7 +19,7 @@ pub const ChoiceCard = struct {
     title_text: []const u8,
     description_text: ?[]const u8 = null,
     selected: bool = false,
-    on_click: ?zui.Listener = null,
+    on_click: ?zui.elements.Listener = null,
 
     pub fn init(title_text: []const u8) ChoiceCard {
         return .{ .title_text = title_text };
@@ -43,7 +43,7 @@ pub const ChoiceCard = struct {
         return copy;
     }
 
-    pub fn onClick(self: ChoiceCard, listener: zui.Listener) ChoiceCard {
+    pub fn onClick(self: ChoiceCard, listener: zui.elements.Listener) ChoiceCard {
         var copy = self;
         copy.on_click = listener;
         return copy;

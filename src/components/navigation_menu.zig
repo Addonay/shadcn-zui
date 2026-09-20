@@ -11,7 +11,7 @@ pub const Link = struct {
     label: []const u8,
     active: bool = false,
     count_text: ?[]const u8 = null,
-    on_click: ?zui.Listener = null,
+    on_click: ?zui.elements.Listener = null,
 };
 
 pub const NavigationMenu = struct {

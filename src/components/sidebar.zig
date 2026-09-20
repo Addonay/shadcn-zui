@@ -39,7 +39,7 @@ pub const Item = struct {
     label: []const u8 = "",
     icon: ?icon_component.Name = null,
     active: bool = false,
-    on_click: ?zui.Listener = null,
+    on_click: ?zui.elements.Listener = null,
 };
 
 pub const Group = struct {

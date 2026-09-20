@@ -31,7 +31,7 @@ pub const Combobox = struct {
     /// Display value; borrowed until paint.
     value_text: []const u8 = "",
     placeholder_text: []const u8 = "",
-    on_open: ?zui.Listener = null,
+    on_open: ?zui.elements.Listener = null,
 
     pub fn init() Combobox {
         return .{};
@@ -49,7 +49,7 @@ pub const Combobox = struct {
         return copy;
     }
 
-    pub fn onOpen(self: Combobox, listener: zui.Listener) Combobox {
+    pub fn onOpen(self: Combobox, listener: zui.elements.Listener) Combobox {
         var copy = self;
         copy.on_open = listener;
         return copy;

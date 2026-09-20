@@ -13,7 +13,7 @@ pub const item_padding_x: f32 = 10;
 pub const Trigger = struct {
     label: []const u8,
     active: bool = false,
-    on_click: ?zui.Listener = null,
+    on_click: ?zui.elements.Listener = null,
 };
 
 /// Trigger chrome for a state (pure; unit-tested).

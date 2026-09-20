@@ -34,7 +34,7 @@ pub const Item = struct {
     shortcut: ?[]const u8 = null,
     danger: bool = false,
     disabled: bool = false,
-    on_click: ?zui.Listener = null,
+    on_click: ?zui.elements.Listener = null,
 };
 
 /// shadcn menu width (`w-56` = 224px).
@@ -59,7 +59,7 @@ pub const DropdownMenu = struct {
     anchor_x: f32 = 0,
     anchor_y: f32 = 0,
     width_px: f32 = default_width,
-    on_scrim_click: ?zui.Listener = null,
+    on_scrim_click: ?zui.elements.Listener = null,
 
     pub fn init(items: []const Item) DropdownMenu {
         return .{ .items = items };
@@ -79,7 +79,7 @@ pub const DropdownMenu = struct {
     }
 
     /// Dismiss-on-outside-click (recommended).
-    pub fn onScrimClick(self: DropdownMenu, listener: zui.Listener) DropdownMenu {
+    pub fn onScrimClick(self: DropdownMenu, listener: zui.elements.Listener) DropdownMenu {
         var copy = self;
         copy.on_scrim_click = listener;
         return copy;

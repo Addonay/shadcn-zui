@@ -23,21 +23,21 @@ pub fn stepped(value: f32, delta: f32, step: f32, min: f32, max: f32) f32 {
 pub const NumberInput = struct {
     /// Formatted value; borrowed until paint ("40", "1,234", ...).
     value_text: []const u8,
-    on_increment: ?zui.Listener = null,
-    on_decrement: ?zui.Listener = null,
+    on_increment: ?zui.elements.Listener = null,
+    on_decrement: ?zui.elements.Listener = null,
     disabled_value: bool = false,
 
     pub fn init(value_text: []const u8) NumberInput {
         return .{ .value_text = value_text };
     }
 
-    pub fn onIncrement(self: NumberInput, listener: zui.Listener) NumberInput {
+    pub fn onIncrement(self: NumberInput, listener: zui.elements.Listener) NumberInput {
         var copy = self;
         copy.on_increment = listener;
         return copy;
     }
 
-    pub fn onDecrement(self: NumberInput, listener: zui.Listener) NumberInput {
+    pub fn onDecrement(self: NumberInput, listener: zui.elements.Listener) NumberInput {
         var copy = self;
         copy.on_decrement = listener;
         return copy;
@@ -49,7 +49,7 @@ pub const NumberInput = struct {
         return copy;
     }
 
-    fn stepperButton(self: NumberInput, name: icon_component.Name, listener: ?zui.Listener) zui.Element {
+    fn stepperButton(self: NumberInput, name: icon_component.Name, listener: ?zui.elements.Listener) zui.Element {
         var slot = zui.div().flex_1().h(20).flex_row().items_center().justify_center()
             .hover_bg(theme.accent);
         slot = slot.child(icon_component.render(name, 12, theme.muted_foreground));

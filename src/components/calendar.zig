@@ -131,14 +131,14 @@ pub const Calendar = struct {
         selected: ?Date = null,
         today: ?Date = null,
         /// App listener fired after a day is picked (read `.selected`).
-        on_change: ?zui.Listener = null,
+        on_change: ?zui.elements.Listener = null,
     };
 
     view_year: u16 = 2026,
     view_month: u8 = 9,
     selected: ?Date = null,
     today: ?Date = null,
-    on_change: ?zui.Listener = null,
+    on_change: ?zui.elements.Listener = null,
     /// Cached during render so day callbacks can map index -> date.
     cells: [42]Cell = undefined,
     label_buf: [32]u8 = undefined,
@@ -263,7 +263,7 @@ pub const RangeCalendar = struct {
         range_start: ?Date = null,
         range_end: ?Date = null,
         today: ?Date = null,
-        on_change: ?zui.Listener = null,
+        on_change: ?zui.elements.Listener = null,
     };
 
     view_year: u16 = 2026,
@@ -272,7 +272,7 @@ pub const RangeCalendar = struct {
     range_end: ?Date = null,
     picking_end: bool = false,
     today: ?Date = null,
-    on_change: ?zui.Listener = null,
+    on_change: ?zui.elements.Listener = null,
     cells: [42]Cell = undefined,
     label_buf: [32]u8 = undefined,
     label_text: []const u8 = "",
