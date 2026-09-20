@@ -1,0 +1,21 @@
+.{
+    .name = .shadcn_zui,
+    .version = "0.1.0",
+    // Matches zui's own floor (cozmic declares it).
+    .minimum_zig_version = "0.17.0-dev.2085+5e36170b5",
+    .fingerprint = 0x7ebbaf67dde2d492,
+    .dependencies = .{
+        // Local checkout during development; swap for a git hash once zui is
+        // published: .zui = .{ .url = "...", .hash = "..." }
+        .zui = .{ .path = "../zui" },
+    },
+    .paths = .{
+        "src",
+        "examples",
+        "docs",
+        "tools",
+        "build.zig",
+        "build.zig.zon",
+        "README.md",
+    },
+}
